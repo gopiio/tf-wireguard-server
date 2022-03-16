@@ -95,7 +95,7 @@ resource "aws_autoscaling_group" "main" {
   initial_lifecycle_hook {
     name                 = local.asg_initial_lifecycle_hook_name
     default_result       = "ABANDON"
-    heartbeat_timeout    = 1500
+    heartbeat_timeout    = 120
     lifecycle_transition = "autoscaling:EC2_INSTANCE_LAUNCHING"
   }
 
