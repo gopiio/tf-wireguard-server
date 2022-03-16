@@ -115,6 +115,10 @@ resource "aws_autoscaling_group" "main" {
 
     }
   }
+  warm_pool {
+    pool_state = "Running"
+    min_size = 2
+  }
 
   depends_on = [aws_s3_bucket_object.main]
 }
